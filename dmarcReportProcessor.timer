@@ -1,0 +1,14 @@
+### DMARC Report Processor timer ###
+#
+# DMARC Report Processor take RUA Report
+# and manage them for you!
+
+[Unit]
+Description=DMARC Report Processor timer
+After=syslog.target network.target
+
+[Timer]
+OnCalendar=daily
+
+[Install]
+WantedBy=rsyslog.service

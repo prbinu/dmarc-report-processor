@@ -130,7 +130,7 @@ def main():
 
   if args.pwdfile:
     infile = open(args.pwdfile, 'r')
-    firstline = infile.readline()
+    firstline = infile.readline().strip()
     args.pwd = firstline
   else:
     args.pwd = getpass.getpass()  
