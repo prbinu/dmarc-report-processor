@@ -83,6 +83,17 @@ Options:
 Example:
   % dmarc-convertor.sh -u dmarc@example.com -P ./pwd -s imap.example.com -p 993 -c ./cacert.pem
 ```
+
+The
+
+```
+	dmarcReportProcessor.service
+	dmarcReportProcessor.timer
+```
+
+shows a possible systemd call to execute the report collection. The env RUAFOLDER defines the IMAP folder where the reports are.
+
+
 *NOTE* The above script expects `imap-client.py` and `dmarc-parser.py` available in $ROOT/bin. You may change the path by modifiying `dmarc-convertor.sh`. 
 
 Tested on python 2.7

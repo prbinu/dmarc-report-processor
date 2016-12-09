@@ -1,0 +1,14 @@
+### DMARC Report Processor ###
+#
+
+[Unit]
+Description=DMARC Report Processor Service
+After=syslog.target network.target
+
+[Service]
+User=root
+Environment=RUAEMAIL=dmarc@example.com
+Environment=IMAPSERVER=msa.example.com
+Environment=RUAFOLDER=INBOX/rua
+Environment=PWDFILE=/usr/local/dmarc-report-processor/pwd
+ExecStart=/usr/local/dmarc-report-processor/dmarc-convertor.sh -u ${RUAEMAIL} -s ${IMAPSERVER} -P ${PWDFILE} -c /etc/pki/tls/certs/ca-bundle.crt
