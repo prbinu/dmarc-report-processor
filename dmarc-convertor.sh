@@ -117,7 +117,7 @@ fi
 
 #2
 shopt -s nullglob
-files=( "${ATTACH}/${ydate}"/*.zip )
+files=( "${ATTACH}/${ydate}"/* )
 if [ "${#files[@]}" -eq "0" ]
 then
         echo "No new reports found. Exiting ..."
